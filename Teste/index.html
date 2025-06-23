@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrição Saudável</title>
+    <style>
+        /* Reset e estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f7f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #4a8c3a, #8bc34a);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #689f38;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #7cb342;
+        }
+        
+        /* Conteúdo principal */
+        main {
+            padding: 2rem 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            color: #2e7d32;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #689f38;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #558b2f;
+        }
+        
+        /* Seção sobre */
+        .about {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .about h2 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        /* Seção de dicas */
+        .tips {
+            background-color: #e8f5e9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .tips h2 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .tips ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        
+        .tips li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #c8e6c9;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                padding: 0.8rem 1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nutrição Saudável</h1>
+            <p>Alimente seu corpo, nutra sua vida</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#alimentacao">Alimentação</a></li>
+            <li><a href="#receitas">Receitas</a></li>
+            <li><a href="#suplementos">Suplementos</a></li>
+            <li><a href="#dicas">Dicas</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    
+    <main class="container">
+        <section id="alimentacao">
+            <h2>Alimentação Balanceada</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?fruits" alt="Frutas">
+                    <div class="card-content">
+                        <h3>Alimentos Naturais</h3>
+                        <p>Descubra os benefícios de uma alimentação rica em frutas, verduras e legumes para sua saúde e bem-estar.</p>
+                        <a href="#" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?protein" alt="Proteínas">
+                    <div class="card-content">
+                        <h3>Fontes de Proteína</h3>
+                        <p>Conheça as melhores fontes de proteína animal e vegetal para manter seus músculos saudáveis.</p>
+                        <a href="#" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?grains" alt="Grãos">
+                    <div class="card-content">
+                        <h3>Grãos Integrais</h3>
+                        <p>Os benefícios dos carboidratos complexos e como incluí-los em sua dieta diária.</p>
+                        <a href="#" class="btn">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="receitas">
+            <h2>Receitas Saudáveis</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?salad" alt="Salada">
+                    <div class="card-content">
+                        <h3>Saladas Criativas</h3>
+                        <p>Receitas de saladas nutritivas que vão além da alface e tomate para variar seu cardápio.</p>
+                        <a href="#" class="btn">Ver Receitas</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?smoothie" alt="Smoothie">
+                    <div class="card-content">
+                        <h3>Smoothies Nutritivos</h3>
+                        <p>Combinações deliciosas de frutas, vegetais e superalimentos para começar o dia com energia.</p>
+                        <a href="#" class="btn">Ver Receitas</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://source.unsplash.com/random/600x400/?healthy%20snack" alt="Lanche Saudável">
+                    <div class="card-content">
+                        <h3>Lanches Saudáveis</h3>
+                        <p>Opções práticas e nutritivas para os intervalos entre as refeições principais.</p>
+                        <a href="#" class="btn">Ver Receitas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="tips" id="dicas">
+            <h2>Dicas de Nutrição</h2>
+            <ul>
+                <li>Beba pelo menos 2 litros de água por dia</li>
+                <li>Prefira alimentos in natura aos processados</li>
+                <li>Inclua fibras em todas as refeições</li>
+                <li>Varie as cores no seu prato para garantir diversidade de nutrientes</li>
+                <li>Mastigue bem os alimentos para melhor digestão</li>
+                <li>Evite refrigerantes e sucos industrializados</li>
+                <li>Consuma gorduras boas como abacate, castanhas e azeite</li>
+            </ul>
+        </section>
+        
+        <section class="about" id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos um portal dedicado a promover a alimentação saudável e consciente. Acreditamos que a nutrição adequada é a base para uma vida plena e cheia de energia.</p>
+            <p>Nossa equipe é formada por nutricionistas, chefs de cozinha saudável e entusiastas da vida saudável que compartilham seu conhecimento para ajudar você a fazer melhores escolhas alimentares.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Nutrição Saudável - Todos os direitos reservados</p>
+            <p>Desenvolvido com ❤️ para uma vida mais saudável</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="YouTube">▶️</a>
+                <a href="#" aria-label="Pinterest">📌</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
