@@ -1,0 +1,123 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url(Fontes/Montserrat-Arabic\ Bold.ttf) format('truetype');
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #4c071b;
+}
+
+#CorpoPortifolio {
+    width: 100%;
+    background-color: #dacbb7;
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+    grid-template-rows: auto auto; /* 2 linhas */
+    gap: 40px;
+    position: relative;
+    min-height: auto; /* Remove altura fixa */
+}
+
+/* Posiciona os cards na grid */
+#card1 {
+    opacity: 0;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end; /* Alinha à direita da coluna 1 (esquerda da tela) */
+}
+
+#card2 {
+    opacity: 0;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start; /* Alinha à esquerda da coluna 2 (direita da tela) */
+}
+
+#card3 {
+    opacity: 0;
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: end; /* Alinha à direita da coluna 1 */
+}
+.card {
+    background-color: #dacbb7;
+    height: 24rem;
+    width: 28rem;
+    margin: 20px 0; /* Margem apenas top e bottom */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: relative; /* Remove posicionamento absoluto */
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+}
+
+#card1.ChegadaAtiva{
+    animation: Chegada 2s forwards;
+    animation-delay: 1s;
+    opacity: 1;
+}
+#card2.ChegadaAtiva{
+    animation: Chegada2 2s forwards;
+    animation-delay: 1s;
+    opacity: 1;
+
+}
+#card3.ChegadaAtiva{
+    opacity: 1;
+    animation: Chegada 2s ease-in-out;
+    
+}
+
+
+button{
+    
+    font-family: 'Montserrat-Arabic', sans-serif;
+    font-size: 16px;
+    border-radius: 8px; 
+    border: 2px solid #4c071b;
+    cursor: pointer; /* cursor pointer para indicar que é clicável */
+    
+}
+
+.card-body{
+    opacity: 0;
+}
+#cardbody1.ChegadaAtiva{
+    animation: Chegada 1s forwards;
+    animation-delay: 1.5s;
+}
+
+#cardbody2.ChegadaAtiva{
+    animation: Chegada2 1s forwards;
+    animation-delay: 1.5s;
+}
+
+#cardbody3.ChegadaAtiva{
+    animation: Chegada 1s forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes Chegada {
+    0% { transform: translateX(-100vw);  opacity: 0;}
+    100% {  transform: translateX(0); opacity: 1;}
+}
+@keyframes Chegada2 {
+    0% { transform: translateX(100vw);  opacity: 0;}
+    100% {  transform: translateX(0); opacity: 1;}
+}
+@keyframes Chegada3{
+    0%{opacity: 0; height: 0;}
+    100%{opacity: 1; height: 1;}
+}
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: auto;
+    }
+}
